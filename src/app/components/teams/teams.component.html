@@ -1,0 +1,266 @@
+<div class="container-fluid custom-heading">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">
+            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M28.6875 17H21.25V8.5C21.25 7.8625 20.825 7.4375 20.1875 7.4375H18.0625V5.3125C18.0625 4.675 17.6375 4.25 17 4.25H15.9375V1.0625C15.9375 0.425 15.5125 0 14.875 0C14.2375 0 13.8125 0.425 13.8125 1.0625V4.25H12.75C12.1125 4.25 11.6875 4.675 11.6875 5.3125V7.4375H9.5625C8.925 7.4375 8.5 7.8625 8.5 8.5V20.1875H1.0625C0.425 20.1875 0 20.6125 0 21.25V32.9375C0 33.575 0.425 34 1.0625 34H9.5625H12.75H17H20.1875H28.6875C29.325 34 29.75 33.575 29.75 32.9375V18.0625C29.75 17.425 29.325 17 28.6875 17ZM6.375 29.75H3.1875V27.625H6.375V29.75ZM6.375 26.5625H3.1875V24.4375H6.375V26.5625ZM10.625 29.75H7.4375V27.625H10.625V29.75ZM10.625 26.5625H7.4375V24.4375H10.625V26.5625ZM15.9375 18.0625V31.875H13.8125V21.25C13.8125 20.6125 13.3875 20.1875 12.75 20.1875H10.625V9.5625H12.75C13.3875 9.5625 13.8125 9.1375 13.8125 8.5V6.375H15.9375V8.5C15.9375 9.1375 16.3625 9.5625 17 9.5625H19.125V17H17C16.3625 17 15.9375 17.425 15.9375 18.0625ZM22.3125 29.75H19.125V27.625H22.3125V29.75ZM22.3125 26.5625H19.125V24.4375H22.3125V26.5625ZM22.3125 23.375H19.125V21.25H22.3125V23.375ZM26.5625 29.75H23.375V27.625H26.5625V29.75ZM26.5625 26.5625H23.375V24.4375H26.5625V26.5625ZM26.5625 23.375H23.375V21.25H26.5625V23.375Z"
+                    fill="#A4A6A8" />
+            </svg> Teams
+        </h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><svg width="16" height="16"
+                viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 0H6V6H0V10H6V16H10V10H16V6H10V0Z" fill="white" />
+            </svg>
+            CREATE NEW TEAM</a>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <ul class="nav nav-pills">
+                <li class="nav-item" (click)="loadTeam('all')">
+                    <a class="nav-link active" data-toggle="tab" href="#all" role="tab" aria-controls="home" aria-selected="true">All</a>
+                </li>
+                <li class="nav-item" (click)="loadTeam('favorite')">
+                    <a class="nav-link" data-toggle="tab" href="#favorite" role="tab" aria-controls="profile" aria-selected="false">Favorites</a>
+                </li>
+                <li class="nav-item" (click)="loadTeam('archived')">
+                    <a class="nav-link" data-toggle="tab" href="#archived" role="tab" aria-controls="profile" aria-selected="false">Archived</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            <!-- Topbar Search -->
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 mw-100 navbar-search">
+                <div class="input-group">
+                    <div class="input-group-append">
+                        <button class="btn" type="button">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M11.7415 10.3275L15.707 14.293L14.293 15.707L10.3275 11.7415C9.2525 12.529 7.9315 13 6.5 13C2.916 13 0 10.084 0 6.5C0 2.916 2.916 0 6.5 0C10.084 0 13 2.916 13 6.5C13 7.932 12.529 9.2525 11.7415 10.3275ZM6.5 1C3.4675 1 1 3.4675 1 6.5C1 9.5325 3.4675 12 6.5 12C9.5325 12 12 9.5325 12 6.5C12 3.4675 9.5325 1 6.5 1Z"
+                                    fill="#999999" />
+                            </svg>
+
+                        </button>
+                    </div>
+                    <input type="text" class="form-control border-0 small" placeholder="Search team name..." aria-label="Search" aria-describedby="basic-addon2">
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-xl-8 col-lg-8">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold">All Teams</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-lg-4 mb-4" *ngFor="let item of all">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title d-flex">
+                                                <img style="height: 55px !important" class="img-profile mr-2" src="{{item.image}}">
+                                                <span>
+                                                    <b style="font-size: 16px">{{item.name}}</b><br>
+                                                    <label class="text-muted" *ngIf="item.created_at"
+                                                        style="color:#565656; font-size: 13px !important">Created on
+                                                        {{item.created_at}}</label>
+                                                </span>
+                                                <svg *ngIf="item.is_favorited" class="ml-auto" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M11.8605 15.1543L8.00054 13.1252L4.14054 15.1543C3.41354 15.5413 2.54854 14.9193 2.68954 14.1003L3.42654 9.80125L0.302542 6.75725C-0.291458 6.17725 0.0395418 5.17025 0.857542 5.05125L5.17354 4.42425L7.10454 0.51225C7.44054 -0.17075 8.56154 -0.17075 8.89754 0.51225L10.8285 4.42325L15.1445 5.05025C15.9625 5.16925 16.2925 6.17625 15.6995 6.75625L12.5755 9.80125L13.3125 14.1003C13.4535 14.9233 12.5865 15.5363 11.8605 15.1543Z"
+                                                        fill="#F8CE43" />
+                                                </svg>
+
+                                                <svg *ngIf="!item.is_favorited" class="ml-auto" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M8.00005 13.5129L11.8601 15.5419C12.5861 15.9239 13.4531 15.3109 13.3121 14.4879L12.5751 10.1889L15.6991 7.14395C16.2921 6.56395 15.9621 5.55695 15.1441 5.43795L10.8281 4.81095L8.89705 0.899945C8.56105 0.216945 7.44005 0.216945 7.10405 0.899945L5.17305 4.81195L0.857054 5.43895C0.0390535 5.55795 -0.291947 6.56495 0.302053 7.14495L3.42605 10.1889L2.68905 14.4879C2.54805 15.3069 3.41305 15.9289 4.14005 15.5419L8.00005 13.5129ZM10.9981 12.8289L8.46605 11.4979C8.17405 11.3439 7.82605 11.3439 7.53405 11.4979L5.00205 12.8289L5.48505 10.0089C5.54105 9.68495 5.43305 9.35295 5.19805 9.12395L3.14905 7.12595L5.98005 6.71495C6.30605 6.66795 6.58705 6.46295 6.73305 6.16795L8.00005 3.60195L9.26705 6.16795C9.41205 6.46295 9.69305 6.66795 10.0201 6.71495L12.8511 7.12595L10.8021 9.12395C10.5671 9.35394 10.4591 9.68495 10.5151 10.0089L10.9981 12.8289Z"
+                                                        fill="#444444" />
+                                                </svg>
+                                            </div>
+                                            <h6 class="card-subtitle mb-2"></h6>
+                                            <p class="card-text ellipsis">{{item.description}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <svg class="mr-1 mb-1" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M0.5 0H12.5C12.7765 0 13 0.223502 13 0.500004V9.00008C13 9.27658 12.7765 9.50008 12.5 9.50008H7.188L3.329 12.8766C3.18 13.0066 2.969 13.0356 2.7935 12.9551C2.6145 12.8741 2.5 12.6966 2.5 12.5001V9.50008H0.5C0.2235 9.50008 0 9.27658 0 9.00008V0.500004C0 0.223502 0.2235 0 0.5 0ZM14 4.00004H15.5C15.776 4.00004 16 4.22404 16 4.50004V12.0001C16 12.2761 15.776 12.5001 15.5 12.5001H14V14.5001C14 14.6876 13.8955 14.8591 13.729 14.9446C13.559 15.0311 13.36 15.0146 13.2095 14.9066L9.84 12.5001H5.278L7.564 10.5001H13C13.5525 10.5001 14 10.0526 14 9.50009V4.00004Z"
+                                                    fill="black" />
+                                            </svg>
+                                            <span style="font-size:13px" class="mr-2">{{item.campaigns_count}}
+                                                Campaigns</span>
+
+                                            <svg class="mr-1 mb-1" width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M8 3C8 4.6185 6.6895 6.5 5 6.5C3.3105 6.5 2 4.6185 2 3C2 1.3455 3.3455 0 5 0C6.6545 0 8 1.3455 8 3ZM10 2H15.5C15.776 2 16 2.2235 16 2.5C16 2.7765 15.776 3 15.5 3H10C9.724 3 9.5 2.7765 9.5 2.5C9.5 2.2235 9.724 2 10 2ZM10 5H15.5C15.776 5 16 5.2235 16 5.5C16 5.7765 15.776 6 15.5 6H10C9.724 6 9.5 5.7765 9.5 5.5C9.5 5.2235 9.724 5 10 5ZM15.5 8H12.5C12.224 8 12 8.2235 12 8.5C12 8.7765 12.224 9 12.5 9H15.5C15.776 9 16 8.7765 16 8.5C16 8.2235 15.776 8 15.5 8ZM12.5 11H15.5C15.776 11 16 11.2235 16 11.5C16 11.7765 15.776 12 15.5 12H12.5C12.224 12 12 11.7765 12 11.5C12 11.2235 12.224 11 12.5 11ZM8.2045 7.9865C6.0045 7.3355 3.929 7.348 1.7915 7.9805C0.7195 8.298 0 9.2615 0 10.379V13.5C0 13.7765 0.224 14 0.5 14H9.5C9.776 14 10 13.7765 10 13.5V10.386C10 9.268 9.2785 8.3035 8.2045 7.9865Z"
+                                                    fill="black" />
+                                            </svg>
+                                            <span style="font-size:13px" class="mr-2">{{item.leads_count}} Leads</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="favorite" role="tabpanel" aria-labelledby="favorite-tab">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold">Favorites</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-lg-4 mb-4" *ngFor="let item of favorites">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title d-flex">
+                                                <img style="height: 55px !important" class="img-profile mr-2" src="{{item.image}}">
+                                                <span>
+                                                    <b style="font-size: 16px">{{item.name}}</b><br>
+                                                    <label class="text-muted" *ngIf="item.created_at"
+                                                        style="color:#565656; font-size: 13px !important">Created on
+                                                        {{item.created_at}}</label>
+                                                </span>
+                                                <svg *ngIf="item.is_favorited" class="ml-auto" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M11.8605 15.1543L8.00054 13.1252L4.14054 15.1543C3.41354 15.5413 2.54854 14.9193 2.68954 14.1003L3.42654 9.80125L0.302542 6.75725C-0.291458 6.17725 0.0395418 5.17025 0.857542 5.05125L5.17354 4.42425L7.10454 0.51225C7.44054 -0.17075 8.56154 -0.17075 8.89754 0.51225L10.8285 4.42325L15.1445 5.05025C15.9625 5.16925 16.2925 6.17625 15.6995 6.75625L12.5755 9.80125L13.3125 14.1003C13.4535 14.9233 12.5865 15.5363 11.8605 15.1543Z"
+                                                        fill="#F8CE43" />
+                                                </svg>
+
+                                                <svg *ngIf="!item.is_favorited" class="ml-auto" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M8.00005 13.5129L11.8601 15.5419C12.5861 15.9239 13.4531 15.3109 13.3121 14.4879L12.5751 10.1889L15.6991 7.14395C16.2921 6.56395 15.9621 5.55695 15.1441 5.43795L10.8281 4.81095L8.89705 0.899945C8.56105 0.216945 7.44005 0.216945 7.10405 0.899945L5.17305 4.81195L0.857054 5.43895C0.0390535 5.55795 -0.291947 6.56495 0.302053 7.14495L3.42605 10.1889L2.68905 14.4879C2.54805 15.3069 3.41305 15.9289 4.14005 15.5419L8.00005 13.5129ZM10.9981 12.8289L8.46605 11.4979C8.17405 11.3439 7.82605 11.3439 7.53405 11.4979L5.00205 12.8289L5.48505 10.0089C5.54105 9.68495 5.43305 9.35295 5.19805 9.12395L3.14905 7.12595L5.98005 6.71495C6.30605 6.66795 6.58705 6.46295 6.73305 6.16795L8.00005 3.60195L9.26705 6.16795C9.41205 6.46295 9.69305 6.66795 10.0201 6.71495L12.8511 7.12595L10.8021 9.12395C10.5671 9.35394 10.4591 9.68495 10.5151 10.0089L10.9981 12.8289Z"
+                                                        fill="#444444" />
+                                                </svg>
+                                            </div>
+                                            <h6 class="card-subtitle mb-2"></h6>
+                                            <p class="card-text ellipsis">{{item.description}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <svg class="mr-1 mb-1" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M0.5 0H12.5C12.7765 0 13 0.223502 13 0.500004V9.00008C13 9.27658 12.7765 9.50008 12.5 9.50008H7.188L3.329 12.8766C3.18 13.0066 2.969 13.0356 2.7935 12.9551C2.6145 12.8741 2.5 12.6966 2.5 12.5001V9.50008H0.5C0.2235 9.50008 0 9.27658 0 9.00008V0.500004C0 0.223502 0.2235 0 0.5 0ZM14 4.00004H15.5C15.776 4.00004 16 4.22404 16 4.50004V12.0001C16 12.2761 15.776 12.5001 15.5 12.5001H14V14.5001C14 14.6876 13.8955 14.8591 13.729 14.9446C13.559 15.0311 13.36 15.0146 13.2095 14.9066L9.84 12.5001H5.278L7.564 10.5001H13C13.5525 10.5001 14 10.0526 14 9.50009V4.00004Z"
+                                                    fill="black" />
+                                            </svg>
+                                            <span style="font-size:13px" class="mr-2">{{item.campaigns_count}}
+                                                Campaigns</span>
+
+                                            <svg class="mr-1 mb-1" width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M8 3C8 4.6185 6.6895 6.5 5 6.5C3.3105 6.5 2 4.6185 2 3C2 1.3455 3.3455 0 5 0C6.6545 0 8 1.3455 8 3ZM10 2H15.5C15.776 2 16 2.2235 16 2.5C16 2.7765 15.776 3 15.5 3H10C9.724 3 9.5 2.7765 9.5 2.5C9.5 2.2235 9.724 2 10 2ZM10 5H15.5C15.776 5 16 5.2235 16 5.5C16 5.7765 15.776 6 15.5 6H10C9.724 6 9.5 5.7765 9.5 5.5C9.5 5.2235 9.724 5 10 5ZM15.5 8H12.5C12.224 8 12 8.2235 12 8.5C12 8.7765 12.224 9 12.5 9H15.5C15.776 9 16 8.7765 16 8.5C16 8.2235 15.776 8 15.5 8ZM12.5 11H15.5C15.776 11 16 11.2235 16 11.5C16 11.7765 15.776 12 15.5 12H12.5C12.224 12 12 11.7765 12 11.5C12 11.2235 12.224 11 12.5 11ZM8.2045 7.9865C6.0045 7.3355 3.929 7.348 1.7915 7.9805C0.7195 8.298 0 9.2615 0 10.379V13.5C0 13.7765 0.224 14 0.5 14H9.5C9.776 14 10 13.7765 10 13.5V10.386C10 9.268 9.2785 8.3035 8.2045 7.9865Z"
+                                                    fill="black" />
+                                            </svg>
+                                            <span style="font-size:13px" class="mr-2">{{item.leads_count}} Leads</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="archived" role="tabpanel" aria-labelledby="archived-tab">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold">Archived</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col-lg-4 mb-4" *ngFor="let item of archived">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="card-title d-flex">
+                                                <img style="height: 55px !important" class="img-profile mr-2" src="{{item.image}}">
+                                                <span>
+                                                    <b style="font-size: 16px">{{item.name}}</b><br>
+                                                    <label class="text-muted" *ngIf="item.created_at"
+                                                        style="color:#565656; font-size: 13px !important">Created on
+                                                        {{item.created_at}}</label>
+                                                </span>
+                                                <svg *ngIf="item.is_favorited" class="ml-auto" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M11.8605 15.1543L8.00054 13.1252L4.14054 15.1543C3.41354 15.5413 2.54854 14.9193 2.68954 14.1003L3.42654 9.80125L0.302542 6.75725C-0.291458 6.17725 0.0395418 5.17025 0.857542 5.05125L5.17354 4.42425L7.10454 0.51225C7.44054 -0.17075 8.56154 -0.17075 8.89754 0.51225L10.8285 4.42325L15.1445 5.05025C15.9625 5.16925 16.2925 6.17625 15.6995 6.75625L12.5755 9.80125L13.3125 14.1003C13.4535 14.9233 12.5865 15.5363 11.8605 15.1543Z"
+                                                        fill="#F8CE43" />
+                                                </svg>
+
+                                                <svg *ngIf="!item.is_favorited" class="ml-auto" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M8.00005 13.5129L11.8601 15.5419C12.5861 15.9239 13.4531 15.3109 13.3121 14.4879L12.5751 10.1889L15.6991 7.14395C16.2921 6.56395 15.9621 5.55695 15.1441 5.43795L10.8281 4.81095L8.89705 0.899945C8.56105 0.216945 7.44005 0.216945 7.10405 0.899945L5.17305 4.81195L0.857054 5.43895C0.0390535 5.55795 -0.291947 6.56495 0.302053 7.14495L3.42605 10.1889L2.68905 14.4879C2.54805 15.3069 3.41305 15.9289 4.14005 15.5419L8.00005 13.5129ZM10.9981 12.8289L8.46605 11.4979C8.17405 11.3439 7.82605 11.3439 7.53405 11.4979L5.00205 12.8289L5.48505 10.0089C5.54105 9.68495 5.43305 9.35295 5.19805 9.12395L3.14905 7.12595L5.98005 6.71495C6.30605 6.66795 6.58705 6.46295 6.73305 6.16795L8.00005 3.60195L9.26705 6.16795C9.41205 6.46295 9.69305 6.66795 10.0201 6.71495L12.8511 7.12595L10.8021 9.12395C10.5671 9.35394 10.4591 9.68495 10.5151 10.0089L10.9981 12.8289Z"
+                                                        fill="#444444" />
+                                                </svg>
+                                            </div>
+                                            <h6 class="card-subtitle mb-2"></h6>
+                                            <p class="card-text ellipsis">{{item.description}}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <svg class="mr-1 mb-1" width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M0.5 0H12.5C12.7765 0 13 0.223502 13 0.500004V9.00008C13 9.27658 12.7765 9.50008 12.5 9.50008H7.188L3.329 12.8766C3.18 13.0066 2.969 13.0356 2.7935 12.9551C2.6145 12.8741 2.5 12.6966 2.5 12.5001V9.50008H0.5C0.2235 9.50008 0 9.27658 0 9.00008V0.500004C0 0.223502 0.2235 0 0.5 0ZM14 4.00004H15.5C15.776 4.00004 16 4.22404 16 4.50004V12.0001C16 12.2761 15.776 12.5001 15.5 12.5001H14V14.5001C14 14.6876 13.8955 14.8591 13.729 14.9446C13.559 15.0311 13.36 15.0146 13.2095 14.9066L9.84 12.5001H5.278L7.564 10.5001H13C13.5525 10.5001 14 10.0526 14 9.50009V4.00004Z"
+                                                    fill="black" />
+                                            </svg>
+                                            <span style="font-size:13px" class="mr-2">{{item.campaigns_count}}
+                                                Campaigns</span>
+
+                                            <svg class="mr-1 mb-1" width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M8 3C8 4.6185 6.6895 6.5 5 6.5C3.3105 6.5 2 4.6185 2 3C2 1.3455 3.3455 0 5 0C6.6545 0 8 1.3455 8 3ZM10 2H15.5C15.776 2 16 2.2235 16 2.5C16 2.7765 15.776 3 15.5 3H10C9.724 3 9.5 2.7765 9.5 2.5C9.5 2.2235 9.724 2 10 2ZM10 5H15.5C15.776 5 16 5.2235 16 5.5C16 5.7765 15.776 6 15.5 6H10C9.724 6 9.5 5.7765 9.5 5.5C9.5 5.2235 9.724 5 10 5ZM15.5 8H12.5C12.224 8 12 8.2235 12 8.5C12 8.7765 12.224 9 12.5 9H15.5C15.776 9 16 8.7765 16 8.5C16 8.2235 15.776 8 15.5 8ZM12.5 11H15.5C15.776 11 16 11.2235 16 11.5C16 11.7765 15.776 12 15.5 12H12.5C12.224 12 12 11.7765 12 11.5C12 11.2235 12.224 11 12.5 11ZM8.2045 7.9865C6.0045 7.3355 3.929 7.348 1.7915 7.9805C0.7195 8.298 0 9.2615 0 10.379V13.5C0 13.7765 0.224 14 0.5 14H9.5C9.776 14 10 13.7765 10 13.5V10.386C10 9.268 9.2785 8.3035 8.2045 7.9865Z"
+                                                    fill="black" />
+                                            </svg>
+                                            <span style="font-size:13px" class="mr-2">{{item.leads_count}} Leads</span>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xl-4 col-lg-4">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Activity</h6>
+
+                </div>
+                <div class="card-body">
+                    <ul class="list-group" *ngFor="let activity of activities">
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-lg-12 d-flex">
+                                    <img style="height:35px !important" class="img-profile rounded-circle mr-2" src="{{activity.person.avatar}}" />
+                                    <span [ngSwitch]="activity.action">
+                                        {{activity.person.name}}
+                                        <span *ngSwitchCase="'added_leads'"> added new leads to
+                                            <strong>{{activity.target}}</strong></span>
+                                    <span *ngSwitchCase="'archived_team'"> archived the team
+                                            <strong>{{activity.target}}</strong></span>
+                                    <span *ngSwitchCase="'increased_quota'"> increased
+                                            <strong>{{activity.target}}</strong>'s quota</span>
+                                    <br>
+                                    <span>{{activity.created_at}}</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
